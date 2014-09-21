@@ -8,9 +8,14 @@ class Team():
     def __init__(self,players):
         self.players = players
 
-url = "https://query.yahooapis.com/v1/public/yql/vk/vk?diagnostics=true"
-        
-r = requests.get(url)
-print r.text
-tree = ET.fromstring(r.text.encode('ascii', 'ignore'))
-print tree
+#url = "https://query.yahooapis.com/v1/public/yql/vk/vk?diagnostics=true"
+
+#r = requests.get(url)
+#print r.text
+#tree = ET.fromstring(r.text.encode('ascii', 'ignore'))
+#print tree
+
+#date = 1
+handler = YHandler('auth.csv')
+querystring = 'game/nfl/'
+players_request = handler.api_req(querystring)
